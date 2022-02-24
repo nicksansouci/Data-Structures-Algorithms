@@ -62,11 +62,15 @@ class Queue:
     def dequeue(self):
         if self.first is None:
             return None
+        elif self.length == 1:
+            self.first = None
+            self.last = None
         else:
             temp = self.first
             self.first = self.first.next
             temp.next = None
         self.length -= 1
+        return temp
 
 my_queue = Queue(5)
 my_queue.enqueue(9)
