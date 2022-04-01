@@ -47,7 +47,7 @@ my_graph.add_vertex('C')
 my_graph.add_edge('A', 'B')
 my_graph.add_edge('B', 'C')
 my_graph.add_edge('C', 'A')
-my_graph.remove_edge('A', 'B')
+#my_graph.remove_edge('A', 'B')
 my_graph.remove_vertex('C')
 
 
