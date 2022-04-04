@@ -66,6 +66,7 @@ class BinarySearchTree:
 
     def dfs_pre_order(self):
         results = []
+        #Recursively running the traverse function by adding and popping from the call stack
         def traverse(current_node):
             results.append(current_node.value)
             if current_node.left is not None:
@@ -75,7 +76,19 @@ class BinarySearchTree:
         traverse(self.root)
         return results
         
-        
+
+    def dfs_post_order(self):
+        results = []
+        #Again traversing recursively, except with post order we are appending to results at the end of the funciton instead of the beginning
+        def traverse(current_node):
+            if current_node.left is not None:
+                traverse(current_node.left)
+            if current_node.right is not None:
+                traverse(current_node.right)
+            results.append(current_node.value)
+
+        traverse(self.root)
+        return results
         
         
         
@@ -93,4 +106,5 @@ my_tree.insert(82)
 
 print(my_tree.BFS())
 print(my_tree.dfs_pre_order())
+print(my_tree.dfs_post_order())
 
